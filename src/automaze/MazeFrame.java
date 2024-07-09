@@ -1,8 +1,7 @@
-
 package automaze;
-public class MazeFrame{
+
+public class MazeFrame extends MyFrame{
 	public void run() {
-		Maze maze=new Maze(15,15);
-		maze.show();
-    }
+	addKeyListener(MazeW.player);
+	}
 }

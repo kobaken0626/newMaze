@@ -1,10 +1,12 @@
 
 package automaze;
-public class Maze{
+
+public class Maze {
 	    private int pointX; //ブロックを置いたり消したりする目印。
 	    private int pointY;
 	    private int width; //横幅と高さ。
 	    private int height;
+	    static boolean enterPressed;
 	    
 	    private byte[][] map; //マップを格納する配列
 	    public Maze(int w, int h) {
@@ -17,7 +19,7 @@ public class Maze{
 	            System.out.println("縦・横共に5以上の奇数で作成してください。");
 	        }
 	    }
-		
+
 
 		int randomPos(int muki) { //x,y座標共に奇数なランダムな座標を返す
 	        int result = 1 + 2 * (int) Math.floor((Math.random() * (muki - 1)) / 2);
@@ -146,8 +148,8 @@ public class Maze{
 	            }
 	        }
 	    }
+	    
 	    public byte[][] getMaze() {
 	        return map;
 	    }
-
 	}
