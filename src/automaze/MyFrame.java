@@ -3,7 +3,6 @@ package automaze;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
@@ -19,7 +18,7 @@ import javax.swing.JFrame;
  *
  */
 public class MyFrame extends JFrame implements Runnable {
-	 private static final int CELL_SIZE = 20;
+	    private static final int CELL_SIZE = 20;
 	    private static final int MIN_WIDTH = 15;
 	    private static final int MIN_HEIGHT = 15;
 
@@ -144,6 +143,7 @@ public class MyFrame extends JFrame implements Runnable {
 	            }
 	        }
 	    }
+	 
 	private Graphics getImageGraphics() {
 		return im.getGraphics();
 	}
@@ -200,16 +200,4 @@ public class MyFrame extends JFrame implements Runnable {
 			g.drawString(str, x, y);
 		}
 	}
-	
-	 public void keyPressed(KeyEvent e) {
-	        if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-	            Maze maze = new Maze(MIN_WIDTH, MIN_HEIGHT);
-	            drawMaze();
-	        }
-	    }
-
-	    public void keyReleased(KeyEvent e) {}
-
-	    public void keyTyped(KeyEvent e) {}
-
-	}
+}

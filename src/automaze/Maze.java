@@ -1,7 +1,10 @@
 
 package automaze;
 
-public class Maze {
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
+public class Maze implements KeyListener{
 	    private int pointX; //ブロックを置いたり消したりする目印。
 	    private int pointY;
 	    private int width; //横幅と高さ。
@@ -19,7 +22,6 @@ public class Maze {
 	            System.out.println("縦・横共に5以上の奇数で作成してください。");
 	        }
 	    }
-
 
 		int randomPos(int muki) { //x,y座標共に奇数なランダムな座標を返す
 	        int result = 1 + 2 * (int) Math.floor((Math.random() * (muki - 1)) / 2);
@@ -152,4 +154,20 @@ public class Maze {
 	    public byte[][] getMaze() {
 	        return map;
 	    }
+	    
+	    public void keyTyped(KeyEvent e) {
+	    }
+		public void keyPressed(KeyEvent e) {
+			// TODO 自動生成されたメソッド・スタブ
+			if(e.getKeyCode()==KeyEvent.VK_SPACE) {
+
+				Maze.isSpace=true;
+			}
+		}
+
+		@Override
+		public void keyReleased(KeyEvent e) {
+			// TODO 自動生成されたメソッド・スタブ
+			
+		}
 	}
